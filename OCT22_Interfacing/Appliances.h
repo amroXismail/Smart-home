@@ -9,11 +9,19 @@
 #ifndef APPLIANCES_H_
 #define APPLIANCES_H_
 
+typedef enum
+{
+	 Init = 0,
+	 MenuAdmin,
+	 MenuUser,
+	 
+}States;
+
 void HandleAC();
 void HandleDoor();
 void HandleLamps();
 void HandleDimmingLamp();
-void HandleLCD();
+void HandleLCD(States state);
 void HandleKeypad();
 
 

@@ -23,8 +23,15 @@
 #include "SPI.h"
 #include "TWI.h"
 #include "EEPROM.h"
+#include "User.h"
+#include "Appliances.h"
 
 int main(void)
 {
+	Keypad_Init();
+	while(1)
+	{
+		
+	}
 	
 }

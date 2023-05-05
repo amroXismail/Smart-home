@@ -127,6 +127,9 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Appliances.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Appliances.h">
       <SubType>compile</SubType>
     </Compile>
@@ -296,6 +299,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\UART\src\UART.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="User.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="User.h">

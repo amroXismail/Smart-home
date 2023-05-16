@@ -29,6 +29,10 @@
 int main(void)
 {
 	Keypad_Init();
+	DIO_Init();
+	LCD_Init();
+	ADC_InitTypes ADCoptions = {ADC_PreScaler128,ADC_Vref_Internal};
+	LM35_Init(&ADCoptions);
 	while(1)
 	{
 		

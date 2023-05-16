@@ -9,6 +9,22 @@
 #ifndef APPLIANCES_H_
 #define APPLIANCES_H_
 # include "LCD.h"
+
+#define  activate_ac() (DIO_WriteChannel(DIO_ChannelC3,STD_High))
+#define  deactivate_ac() (DIO_WriteChannel(DIO_ChannelC3,STD_Low))
+typedef enum
+{
+	AC_Auto = 0,
+	AC_Man
+}AC_Mode;
+
+typedef enum
+{
+	AC_Off = 0,
+	AC_On,
+	None
+}AC_Operation;
+
 typedef enum
 {
 	 Init = 0,
@@ -31,7 +47,7 @@ typedef enum
 	 
 }States;
 
-void HandleAC();
+void HandleAC(AC_Mode ac_mode,AC_Operation ac_operation);
 void HandleDoor();
 void HandleLamps();
 void HandleDimmingLamp();

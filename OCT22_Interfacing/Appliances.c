@@ -5,10 +5,36 @@
  *  Author: user
  */ 
 #include "Appliances.h"
+#include "Keypad.h"
 
-void HandleAC()
+void HandleAC(AC_Mode ac_mode,AC_Operation ac_operation)
 {
 	
+	if (ac_mode == AC_Auto)
+	{
+		u16 temp = 0;
+		temp = LM35_Read(ADC_Channel0);
+		if(temp >= 28)
+		{
+			activate_ac();
+		}
+		if(temp <= 21)
+		{
+			deactivate_ac();
+		}
+		
+	}
+	else if (ac_mode == AC_Man)
+	{
+		if (ac_operation == AC_On)
+		{
+			activate_ac();
+		}
+		else if (ac_operation == AC_Off)
+		{
+			deactivate_ac();
+		}
+	}
 }
 
 void HandleDoor()
